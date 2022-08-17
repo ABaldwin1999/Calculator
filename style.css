@@ -1,23 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 .calculator {
   background-color: #2f155e;
-  width: 300px;
+  width: 350px;
   height: auto;
+  padding: 5px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 .calculator-screen {
   background-color: aliceblue;
-  height: 10%;
-  width: 80%;
+  height: 30px;
+  width: 90%;
+  margin: 2%;
+  padding-left: 5%;
+  text-align: right;
+  border-radius: 5px;
+}
+.calculator-numPad {
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .calculator-button {
   width: 64px;
   height: 64px;
+  margin: 1%;
   background-color: chartreuse;
   border-radius: 100%;
-  box-shadow: 2px pink;
   text-align: center;
-}
-.calculator-button p {
   font-family: "Josefin Sans", sans-serif;
+}
+.calculator-button:hover {
+  background-color: aquamarine;
 }
