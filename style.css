@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+.calculator {
+  background-color: #2f155e;
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+}
+.calculator-screen {
+  background-color: aliceblue;
+  height: 10%;
+  width: 80%;
+}
+.calculator-button {
+  width: 64px;
+  height: 64px;
+  background-color: chartreuse;
+  border-radius: 100%;
+  box-shadow: 2px pink;
+  text-align: center;
+}
+.calculator-button p {
+  font-family: "Josefin Sans", sans-serif;
+}

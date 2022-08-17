@@ -1,1 +1,1 @@
-# Calculator
+# Calculator - a basic calculator for at least some of your numerical needs.
