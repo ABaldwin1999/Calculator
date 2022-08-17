@@ -3,12 +3,17 @@
 const calculate = (input) =>{
     let input0=input[0];
     let input1=0;
+    let input2 =0
     for(i=1; i< input.length; i++){
         if(typeof input[i] == "string"){
            // switch:
            // case "+"
            //input0 = input0 + input1;
            // case "-"
+           //case ')'
+        }
+        else if(input[i]='('){
+            ///condition for brackets???
         }
         else{
             input1= input[i];
