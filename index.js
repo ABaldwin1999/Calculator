@@ -1,4 +1,6 @@
 
+const screenNumber = document.getElementById('screen');
+
 //// basic calculator functions go here
 const calculate = (input) =>{
     let input0=0;
@@ -31,6 +33,8 @@ const makeInput = (input, newInput) =>{
 }
 
 
+
+
 ///more advanced functions ln e???
 
 
@@ -39,6 +43,10 @@ const makeInput = (input, newInput) =>{
 
 //// buttons
 
-const element0 = document.getElementById("myBtn");
-element0.addEventListener("click", clearFunc);
+const onButton = document.getElementById('on');
+///sets value of screen to 0 when C is clicked
+onButton.addEventListener("click", ()=>{
+    console.log(screenNumber.value);
+    screenNumber.value = '9';
+});
 

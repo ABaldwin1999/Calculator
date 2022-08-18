@@ -1,6 +1,7 @@
 "use strict";
 
-//// basic calculator functions go here
+var screenNumber = document.getElementById('screen'); //// basic calculator functions go here
+
 var calculate = function calculate(input) {
   var input0 = 0;
   var input1 = 0;
@@ -32,5 +33,9 @@ var makeInput = function makeInput(input, newInput) {} ///if number thats not af
 //// buttons
 ;
 
-var element0 = document.getElementById("myBtn");
-element0.addEventListener("click", clearFunc);
+var onButton = document.getElementById('on'); ///sets value of screen to 0 when C is clicked
+
+onButton.addEventListener("click", function () {
+  console.log(screenNumber.value);
+  screenNumber.value = '9';
+});
