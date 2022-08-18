@@ -3,6 +3,9 @@
 $font-family:'Josefin Sans', sans-serif;
 $background-color:#2f155e ;
 
+body{
+    font-family: $font-family; 
+}
 .calculator{
     background-color: $background-color;
     width: 350px;
@@ -15,10 +18,13 @@ $background-color:#2f155e ;
     gap: 5px;
     &-screen{
         background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: end;
         height: 30px;
         width: 90%;
         margin: 2%;
-        padding-left: 5%;
+        padding: 1%;
         text-align: right;
         border-radius: 5px;
     }
@@ -38,7 +44,6 @@ $background-color:#2f155e ;
         background-color: chartreuse;
         border-radius: 100%;
         text-align: center;
-        font-family: $font-family; 
     }
     &-button:hover{
         background-color: aquamarine;

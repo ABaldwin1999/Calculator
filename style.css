@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 .calculator {
   background-color: #2f155e;
   width: 350px;
@@ -12,10 +16,13 @@
 }
 .calculator-screen {
   background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: end;
   height: 30px;
   width: 90%;
   margin: 2%;
-  padding-left: 5%;
+  padding: 1%;
   text-align: right;
   border-radius: 5px;
 }
@@ -35,7 +42,6 @@
   background-color: chartreuse;
   border-radius: 100%;
   text-align: center;
-  font-family: "Josefin Sans", sans-serif;
 }
 .calculator-button:hover {
   background-color: aquamarine;

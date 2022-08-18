@@ -33,4 +33,4 @@ var makeInput = function makeInput(input, newInput) {} ///if number thats not af
 ;
 
 var element0 = document.getElementById("myBtn");
-element.addEventListener("click", myFunction);
+element0.addEventListener("click", clearFunc);
