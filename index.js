@@ -40,5 +40,5 @@ const makeInput = (input, newInput) =>{
 //// buttons
 
 const element0 = document.getElementById("myBtn");
-element.addEventListener("click", myFunction);
+element0.addEventListener("click", clearFunc);
 
