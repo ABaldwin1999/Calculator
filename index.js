@@ -1,10 +1,14 @@
 
 const screenNumber = document.getElementById('screen');
 let newCalcTrue = true;
+let prevOp = false;
 
 //// basic calculator functions go here
 const calculate = (input) =>{
     ////get string split up into equation?simplist way?
+
+    //screenNumber.forEach(item)
+    // if number put in box else add one put in next box
     
 }
 
@@ -25,27 +29,29 @@ onButton.addEventListener("click", ()=>{
 
 const inputNumber = document.querySelectorAll('.number-button');
 inputNumber.forEach((item) =>{
+    prevOp = false;
     item.addEventListener("click",(event)=>{  
-    //screenNumber.innerHTML += item.innerHTML;
     if(newCalcTrue === false){
        screenNumber.innerHTML += item.innerHTML;
-       console.log(newCalcTrue);
     }
     else{
         screenNumber.innerHTML = item.innerHTML;
-        console.log(newCalcTrue);
         newCalcTrue = false;
-        console.log(newCalcTrue);
-        return newCalcTrue;
+        return newCalcTrue, prevOp;
     }})
 })
 
-// const inputOperator = document.querySelectorAll('');
-// inputOperator.forEach((item) =>{
-//     item.addEventListener("click",(event)=>{  
-//     screenNumber.innerHTML += item.innerHTML;
-//     if(screenNumber.innerHTML. !== '+' || '-'  ){
-//         screenNumber.innerHTML += item.value;
-//     }
-// })
-// })
+ const inputOperator = document.querySelectorAll('.operator-button');
+ inputOperator.forEach((item) =>{
+     item.addEventListener("click",(event)=>{  
+    screenNumber.innerHTML += item.innerHTML;
+    newCalcTrue = false;
+  // console.log(screenNumber.innerHTML);
+  //  if(prevOp === false){
+  //      screenNumber.innerHTML += item.innerHTML;
+  //      prevOp=true;
+  //      return prevOp;
+  //   }
+
+ })
+ })

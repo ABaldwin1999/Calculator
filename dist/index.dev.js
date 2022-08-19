@@ -1,9 +1,12 @@
 "use strict";
 
 var screenNumber = document.getElementById('screen');
-var newCalcTrue = true; //// basic calculator functions go here
+var newCalcTrue = true;
+var prevOp = false; //// basic calculator functions go here
 
 var calculate = function calculate(input) {////get string split up into equation?simplist way?
+  //screenNumber.forEach(item)
+  // if number put in box else add one put in next box
 };
 
 var inputFunc = function inputFunc(event) {
@@ -22,25 +25,26 @@ onButton.addEventListener("click", function () {
 });
 var inputNumber = document.querySelectorAll('.number-button');
 inputNumber.forEach(function (item) {
+  prevOp = false;
   item.addEventListener("click", function (event) {
-    //screenNumber.innerHTML += item.innerHTML;
     if (newCalcTrue === false) {
       screenNumber.innerHTML += item.innerHTML;
-      console.log(newCalcTrue);
     } else {
       screenNumber.innerHTML = item.innerHTML;
-      console.log(newCalcTrue);
       newCalcTrue = false;
-      console.log(newCalcTrue);
-      return newCalcTrue;
+      return newCalcTrue, prevOp;
     }
   });
-}); // const inputOperator = document.querySelectorAll('');
-// inputOperator.forEach((item) =>{
-//     item.addEventListener("click",(event)=>{  
-//     screenNumber.innerHTML += item.innerHTML;
-//     if(screenNumber.innerHTML. !== '+' || '-'  ){
-//         screenNumber.innerHTML += item.value;
-//     }
-// })
-// })
+});
+var inputOperator = document.querySelectorAll('.operator-button');
+inputOperator.forEach(function (item) {
+  item.addEventListener("click", function (event) {
+    screenNumber.innerHTML += item.innerHTML;
+    newCalcTrue = false; // console.log(screenNumber.innerHTML);
+    //  if(prevOp === false){
+    //      screenNumber.innerHTML += item.innerHTML;
+    //      prevOp=true;
+    //      return prevOp;
+    //   }
+  });
+});
