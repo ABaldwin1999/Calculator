@@ -3,50 +3,41 @@ const screenNumber = document.getElementById('screen');
 
 //// basic calculator functions go here
 const calculate = (input) =>{
-    let input0=0;
-    let input1=0;
-    let input2 =0;
-    for(i=0; i< input.length; i++){
-        if(i=0){
-            input0 = input1;
-        }
-        if(typeof input[i] == "string" && i!=0){
-           // switch:
-           // case "+"
-           //input0 = input0 + input1;
-           // case "-"
-           //case ')'
-        }
-        else if(input[i]='('  && i!=0){
-            ///condition for brackets???
-        }
-        else{
-            input1= input[i];
-        }
-    }
-    return input0;
+    ////get string split up into equation?simplist way?
+    
 }
 
-const makeInput = (input, newInput) =>{
-    ///if number thats not after operater add it after last number if 
-    //operator add it in new section.
+const inputFunc = (event) =>{
+    const input = item.innerHTML;
+    screenNumber.innerHTML += input;
+    console.log(input);  
+    screenNumber.innerHTML += '7';
 }
-
-
-
-
-///more advanced functions ln e???
-
-
-
-////integration? differentiation?
-
-//// buttons
 
 const onButton = document.getElementById('on');
 ///sets value of screen to 0 when C is clicked
 onButton.addEventListener("click", ()=>{
-    console.log(screenNumber.value);
-    screenNumber.value = '9';
+    screenNumber.innerHTML = '0';
 });
 
+const inputNumber = document.querySelectorAll('.number-button');
+inputNumber.forEach((item) =>{
+    item.addEventListener("click",(event)=>{  
+    //screenNumber.innerHTML += item.innerHTML;
+    if(screenNumber.innerHTML !== '0'){
+        screenNumber.innerHTML += item.innerHTML;
+    }
+    else{
+        screenNumber.innerHTML = item.innerHTML;
+    }})
+})
+
+// const inputOperator = document.querySelectorAll('');
+// inputOperator.forEach((item) =>{
+//     item.addEventListener("click",(event)=>{  
+//     screenNumber.innerHTML += item.innerHTML;
+//     if(screenNumber.innerHTML. !== '+' || '-'  ){
+//         screenNumber.innerHTML += item.value;
+//     }
+// })
+// })
