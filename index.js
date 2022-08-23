@@ -5,6 +5,8 @@ let storeNum0 = "";
 let storeNum1 = "";
 let currentOp = "";
 
+//nameOfTheString.includes(".")
+
 //// basic calculator functions go here
 const calculate = () => {
   calc = 0;
@@ -31,7 +33,6 @@ const calculate = () => {
   screenNumber.innerText = calc;
   storeNum0 = "" + calc + "";
   storeNum1 = "";
-  console.log("called!");
 };
 
 const onButton = document.getElementById("on");
@@ -54,10 +55,9 @@ inputNumber.forEach((item) => {
       screenNumber.innerHTML = item.innerText;
       newCalcTrue = false;
     }
-    if(count>0){
+    if (count > 0) {
       storeNum1 += item.innerText;
-    }
-    else{
+    } else {
       storeNum0 += item.innerText;
     }
     console.log(count);
@@ -68,7 +68,7 @@ inputNumber.forEach((item) => {
 const inputOperator = document.querySelectorAll(".operator-button");
 inputOperator.forEach((item) => {
   item.addEventListener("click", (event) => {
-    if ((count > 0)) {
+    if (count > 0 && storeNum1 !== "") {
       calculate();
       let prevOp = screenNumber.innerText.slice(-1);
       if (
@@ -80,6 +80,7 @@ inputOperator.forEach((item) => {
         screenNumber.innerText = screenNumber.innerText;
       } else {
         screenNumber.innerText += item.innerText;
+        currentOp = item.innerText;
       }
     } else {
       let prevOp = screenNumber.innerText.slice(-1);
@@ -92,14 +93,14 @@ inputOperator.forEach((item) => {
         screenNumber.innerText = screenNumber.innerText;
       } else {
         screenNumber.innerText += item.innerText;
+        currentOp = item.innerText;
       }
     }
     newCalcTrue = false;
     count++;
-    currentOp = item.innerText;
   });
 });
 
 const equalsButton = document.getElementById("equals");
-///sets does the sum then displays the answer
+///calls the Calculate function
 equalsButton.addEventListener("click", calculate);

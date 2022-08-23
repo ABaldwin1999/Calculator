@@ -5,7 +5,8 @@ var newCalcTrue = true;
 var count = 0;
 var storeNum0 = "";
 var storeNum1 = "";
-var currentOp = ""; //// basic calculator functions go here
+var currentOp = ""; //nameOfTheString.includes(".")
+//// basic calculator functions go here
 
 var calculate = function calculate() {
   calc = 0;
@@ -38,7 +39,6 @@ var calculate = function calculate() {
   screenNumber.innerText = calc;
   storeNum0 = "" + calc + "";
   storeNum1 = "";
-  console.log("called!");
 };
 
 var onButton = document.getElementById("on"); ///sets value of screen to 0 when C is clicked resets all variables
@@ -74,7 +74,7 @@ inputNumber.forEach(function (item) {
 var inputOperator = document.querySelectorAll(".operator-button");
 inputOperator.forEach(function (item) {
   item.addEventListener("click", function (event) {
-    if (count > 0) {
+    if (count > 0 && storeNum1 !== "") {
       calculate();
       var prevOp = screenNumber.innerText.slice(-1);
 
@@ -82,6 +82,7 @@ inputOperator.forEach(function (item) {
         screenNumber.innerText = screenNumber.innerText;
       } else {
         screenNumber.innerText += item.innerText;
+        currentOp = item.innerText;
       }
     } else {
       var _prevOp = screenNumber.innerText.slice(-1);
@@ -90,14 +91,14 @@ inputOperator.forEach(function (item) {
         screenNumber.innerText = screenNumber.innerText;
       } else {
         screenNumber.innerText += item.innerText;
+        currentOp = item.innerText;
       }
     }
 
     newCalcTrue = false;
     count++;
-    currentOp = item.innerText;
   });
 });
-var equalsButton = document.getElementById("equals"); ///sets does the sum then displays the answer
+var equalsButton = document.getElementById("equals"); ///calls the Calculate function
 
 equalsButton.addEventListener("click", calculate);
