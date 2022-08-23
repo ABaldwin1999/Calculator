@@ -39,20 +39,10 @@ var calculate = function calculate() {
   screenNumber.innerText = calc;
   storeNum0 = "" + calc + "";
   storeNum1 = "";
+  currentOp = "";
 };
 
-var onButton = document.getElementById("on"); ///sets value of screen to 0 when C is clicked resets all variables
-
-onButton.addEventListener("click", function () {
-  screenNumber.innerHTML = "0";
-  newCalcTrue = true;
-  count = 0;
-  storeNum0 = "";
-  storeNum1 = "";
-  currentOp = "";
-});
-var inputNumber = document.querySelectorAll(".number-button");
-inputNumber.forEach(function (item) {
+var numberClicker = function numberClicker(item) {
   item.addEventListener("click", function (event) {
     if (newCalcTrue === false) {
       screenNumber.innerHTML += item.innerText;
@@ -66,13 +56,10 @@ inputNumber.forEach(function (item) {
     } else {
       storeNum0 += item.innerText;
     }
-
-    console.log(count);
   });
-}); ///adds operator to screen upon button click
+};
 
-var inputOperator = document.querySelectorAll(".operator-button");
-inputOperator.forEach(function (item) {
+var operatorClicker = function operatorClicker(item) {
   item.addEventListener("click", function (event) {
     if (count > 0 && storeNum1 !== "") {
       calculate();
@@ -98,7 +85,23 @@ inputOperator.forEach(function (item) {
     newCalcTrue = false;
     count++;
   });
+};
+
+var onButton = document.getElementById("on"); ///sets value of screen to 0 when C is clicked resets all variables
+
+onButton.addEventListener("click", function () {
+  screenNumber.innerHTML = "0";
+  newCalcTrue = true;
+  count = 0;
+  storeNum0 = "";
+  storeNum1 = "";
+  currentOp = "";
 });
+var inputNumber = document.querySelectorAll(".number-button");
+inputNumber.forEach(numberClicker); ///adds operator to screen upon button click
+
+var inputOperator = document.querySelectorAll(".operator-button");
+inputOperator.forEach(operatorClicker);
 var equalsButton = document.getElementById("equals"); ///calls the Calculate function
 
 equalsButton.addEventListener("click", calculate);
