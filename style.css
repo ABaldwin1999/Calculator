@@ -46,3 +46,9 @@
 .calculator-button:hover {
   background-color: aquamarine;
 }
+
+@media only screen and (min-width: 768px) {
+  .calculator {
+    margin-left: 30%;
+  }
+}

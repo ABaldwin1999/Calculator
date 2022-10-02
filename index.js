@@ -31,7 +31,7 @@ const calculate = () => {
       break;
   }
   screenNumber.innerText = calc;
-  storeNum0 = "" + calc + "";
+  storeNum0 = screenNumber.innerText;
   storeNum1 = "";
   currentOp = "";
 };
